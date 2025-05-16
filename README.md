@@ -1,6 +1,6 @@
-# basochecker 🛠️
+# basoceker 🛠️
 
-**basochecker** adalah tools berbasis web yang dibangun menggunakan **Next.js** dan library **viem** untuk melakukan pengecekan saldo dari berbagai jaringan blockchain hanya dengan memasukkan **Address**.
+**basoceker** adalah tools berbasis web yang dibangun menggunakan **Next.js** dan library **viem** untuk melakukan pengecekan saldo dari berbagai jaringan blockchain hanya dengan memasukkan **Address**.
 
 Gunakan dengan Bijak untuk pembelajaran,
 JADI BUAT APA? IF YOU KNOW, YOU KNOW | YANG TAU TAU AJA
@@ -44,14 +44,8 @@ Semua proses berjalan secara lokal di browser (client-side), namun **penggunaan 
 ## 📦 Instalasi Lokal
 
 ```bash
-git clone https://github.com/Lunairefine/basochecker.git
+git clone https://github.com/Lunairefine/basoceker.git
 cd basochecker
 npm install
 npm run dev
-Buka di browser: http://localhost:3000/ | http://localhost:3000/private
-
----
-📄 Lisensi
-MIT License © Lunairefine
-
----
+Buka di browser: http://localhost:port/ | http://localhost:port/private
