@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# basochecker 🛠️
 
-## Getting Started
+**basochecker** adalah tools berbasis web yang dibangun menggunakan **Next.js** dan library **viem** untuk melakukan pengecekan saldo dari berbagai jaringan blockchain hanya dengan memasukkan **Address**.
 
-First, run the development server:
+Gunakan dengan Bijak untuk pembelajaran,
+JADI BUAT APA? IF YOU KNOW, YOU KNOW | YANG TAU TAU AJA
+
+---
+
+## ✨ Fitur
+- Input **banyak** address, dipisahkan dengan baris (newline)
+- Input **banyak** private key, dipisahkan dengan baris (newline)
+- Input Kunci Pribadi dilakukan melalui halaman khusus di: `/private`
+- Mendukung jaringan:
+  - Ethereum
+  - BNB Chain
+  - Optimism
+  - Arbitrum
+  - Base
+  - Linea
+- Menampilkan output per kolom untuk tiap wallet (address)
+- Tidak menyimpan data apa pun (client-side only)
+
+---
+
+## 🚀 Library yang Digunakan
+
+- [Next.js](https://nextjs.org/) – Framework React modern
+- [Viem](https://viem.sh/) – Library EVM untuk komunikasi RPC
+- [Tailwind CSS](https://tailwindcss.com/) – Untuk styling modern dan responsif
+
+---
+
+## ⚠️ PERINGATAN PENTING
+
+**JANGAN PERNAH MEMASUKKAN PRIVATE KEY ASLI ATAU YANG SEDANG DIGUNAKAN!**
+
+**TOOLS INI HANYA UNTUK PENGUJIAN ATAU PRIVATE KEY DUMMY SAJA!**
+
+Semua proses berjalan secara lokal di browser (client-side), namun **penggunaan private key asli SANGAT TIDAK DISARANKAN untuk alasan keamanan**.
+
+---
+
+## 📦 Instalasi Lokal
 
 ```bash
+git clone https://github.com/Lunairefine/basochecker.git
+cd basochecker
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Buka di browser: http://localhost:3000/ | http://localhost:3000/private
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
+📄 Lisensi
+MIT License © Lunairefine
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
