@@ -33,14 +33,14 @@ const clients = {
 }
 
 // Define network symbols
-const symbols = {
-  ethereum: "ETH",
-  bnb: "BNB",
-  arbitrum: "ETH",
-  optimism: "ETH",
-  base: "ETH",
-  linea: "ETH",
-}
+// const symbols = {
+//   ethereum: "ETH",
+//   bnb: "BNB",
+//   arbitrum: "ETH",
+//   optimism: "ETH",
+//   base: "ETH",
+//   linea: "ETH",
+// }
 
 export default function Home() {
   const [addressInput, setAddressInput] = useState("")
@@ -102,7 +102,7 @@ export default function Home() {
             const balance = await Promise.race([fetchBalance(), timeoutPromise])
             console.log(`Balance for ${address} on ${network}:`, balance)
 
-            // @ts-ignore - TypeScript doesn't know that balance is a bigint
+            // @ts-expect-error: dynamic key assignment is valid here
             newBalances[address][network] = formatEther(balance)
           } catch (error) {
             console.error(`Error fetching balance for ${address} on ${network}:`, error)
@@ -215,7 +215,7 @@ Example:
                 {Object.keys(balances).length === 0 ? (
                   <tr>
                     <td colSpan={7} className="px-6 py-4 text-center text-gray-500">
-                      No addresses checked yet. Enter addresses and click "Check Balances".
+                      No addresses checked yet. Enter addresses and click &quot;Check Balances&quot;.
                     </td>
                   </tr>
                 ) : (

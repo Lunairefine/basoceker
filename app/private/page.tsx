@@ -34,14 +34,14 @@ const clients = {
 }
 
 // Define network symbols
-const symbols = {
-  ethereum: "ETH",
-  bnb: "BNB",
-  arbitrum: "ETH",
-  optimism: "ETH",
-  base: "ETH",
-  linea: "ETH",
-}
+// const symbols = {
+//   ethereum: "ETH",
+//   bnb: "BNB",
+//   arbitrum: "ETH",
+//   optimism: "ETH",
+//   base: "ETH",
+//   linea: "ETH",
+// }
 
 export default function PrivateKeyChecker() {
   const [privateKeyInput, setPrivateKeyInput] = useState("")
@@ -82,8 +82,8 @@ export default function PrivateKeyChecker() {
         const wallet = new ethers.Wallet(formattedKey)
         derivedAddresses.push(wallet.address)
       } catch (error) {
-        console.error("Invalid private key:", privateKey)
-        invalidKeys.push(privateKey)
+          console.error("Invalid private key:", privateKey, error)
+          invalidKeys.push(privateKey)
       }
     }
 
@@ -142,7 +142,7 @@ export default function PrivateKeyChecker() {
             const balance = await Promise.race([fetchBalance(), timeoutPromise])
             console.log(`Balance for ${address} on ${network}:`, balance)
 
-            // @ts-ignore - TypeScript doesn't know that balance is a bigint
+            // @ts-expect-error: dynamic key assignment is valid here
             newBalances[address][network] = formatEther(balance)
           } catch (error) {
             console.error(`Error fetching balance for ${address} on ${network}:`, error)
@@ -174,7 +174,7 @@ export default function PrivateKeyChecker() {
           <div className="mt-2 p-3 bg-red-900/30 border border-red-800 rounded-md">
             <p className="text-sm text-red-300">
               <strong>Security Warning:</strong> This tool runs entirely in your browser and your private keys are never
-              sent to any server. However, it's generally not recommended to enter private keys on websites. Use at your
+              sent to any server. However, its generally not recommended to enter private keys on websites. Use at your
               own risk and preferably on a secure, offline device.<br></br><br></br>PEMBUAT TIDAK BERTANGGUNG JAWAB ATAS APA YANG AKAN TERJADI, ALAT INI HANYA UNTUK UJI COBA !!! JANGAN MASUKAN PRIVATE KEY ASLI/YANG DIGUNAKAN. MENGGUNAKAN PRGRAM BERARTI MENYETUJUI
             </p>
           </div>
@@ -262,7 +262,7 @@ Example:
                 {addresses.length === 0 ? (
                   <tr>
                     <td colSpan={7} className="px-6 py-4 text-center text-gray-500">
-                      No addresses checked yet. Enter private keys and click "Check Balances".
+                      No addresses checked yet. Enter private keys and click &quot;Check Balances&quot;.
                     </td>
                   </tr>
                 ) : (
